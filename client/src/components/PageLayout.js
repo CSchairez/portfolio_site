@@ -11,7 +11,7 @@ const PageLayout = () => {
         <Navbar />
         <Outlet />
         </div>
-        <footer className="footer">Footer</footer>
+        <footer className="footer">© 2025 CSmike</footer>
       </main>
       
     </>

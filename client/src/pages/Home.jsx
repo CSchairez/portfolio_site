@@ -2,13 +2,14 @@ import React from 'react';
 import { useState } from 'react';
 import '../App.css';
 import logo from '../assets/logo192.png';
+import Pdf from '../assets/chairezmichael.resume25.pdf';
 
 const Home = () => {
     const [isHovered, setIsHovered] = useState(false);
 
     return (
-    <div className="home-content">
-        <div className="home-card-main">
+    <div className="page-content">
+        <div className="page-card-main">
             <div className="home-card-header" >
             <h1>Michael Chairez, B.S.</h1>
 
@@ -35,6 +36,7 @@ const Home = () => {
     </div>
         <div className="home-card-item-resume">
             <h3>Resume</h3>
+            <a href = {Pdf} target = "_blank" rel="noopener noreferrer">Click Here</a>
         </div>
         <div className="home-card-item-tech">
             <h3>Tech</h3>

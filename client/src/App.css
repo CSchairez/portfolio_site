@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cal+Sans&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
 .app-root {
-  height: 100%;
-  
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
 }
 
 .app-content {
@@ -41,22 +42,25 @@
   box-shadow: 0px 0px 20px #1fafdf;
 }
 
-.home-content {
+.page-content {
   display: flex;
   flex-direction: column;
   width: 100%;
+  height: 100%;
 }
 
-.home-card-main {
+.page-card-main {
   display: row;
   flex-direction: row;
   padding: 5%;
+  height: 100%;
   width: 100%;
   min-height: 45vh;
   border-radius: 8px;
   font-family: Cal Sans;
   margin: 1% 0;
-  position: relative;  
+  position: relative;
+  color: white;
 }
 
 .home-card-header {
@@ -81,7 +85,8 @@
 
 .home-card-description {
   display: column;
-  color: rgb(5, 255, 234);
+  color: #effcff;
+  font-family: Cal Sans;
   justify-content: top;
   font-size: 2rem;
 }
@@ -97,10 +102,14 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  min-width: 100%;
   position: relative;
   flex-direction: row; /* default for larger screens */
 }
+
+/***********************************************************************************
+ * Home Card Education
+ *****************************************/
 
 .home-card-item-education {
   display: flex;
@@ -109,7 +118,7 @@
   min-height: 30vh;
   min-width: 20vw;
   border-radius: 25px;
-  background-color: white;
+  background: white;
   margin: 1rem;
   flex: 1 1 250px;
   align-items: center;
@@ -133,7 +142,9 @@
   font-family: Cal Sans;
   margin-top: 20%;
 }
-
+/***********************************************************************************
+ * Home Card Resume
+ *****************************************/
 .home-card-item-resume {
   display: flex;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -149,6 +160,7 @@
 }
 .home-card-item-resume:hover h3 {
   color: white;
+  display: none;
   
 }
 
@@ -158,6 +170,22 @@
   -webkit-transition: all .4s ease;
   cursor: pointer;
 }
+
+.home-card-item-resume a {
+  display: none;
+}
+
+.home-card-item-resume:hover a {
+  display: flex;
+  color: white;
+  font-family: Cal Sans;
+  font-weight: 100;
+  text-decoration: none;
+  font-size: 2rem;
+}
+/***********************************************************************************
+ * Home Card Tech
+ *****************************************/
 
 .home-card-item-tech {
   display: flex;
@@ -197,4 +225,44 @@
   color: white;
   font-family: Cal Sans;
   font-weight: 200;
+}
+
+/***********************************************************************************
+ * About Page
+ *****************************************/
+
+
+.page-card {
+  display: row;
+  flex-direction: row;
+  padding: 5%;
+  height: 100%;
+  width: 100%;
+  min-height: 45vh;
+  border-radius: 8px;
+  font-family: Cal Sans;
+  margin: 1% 0;
+  position: relative;
+  color: white;
+  font-size: 1.5rem;
+  background: -webkit-linear-gradient(#caf5ff, #e0f7ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  font-weight: 100;
+  line-height: 1.5;
+}
+
+.page-card button {
+  background-color: #37d1f3;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border-color: rgb(154, 237, 252);
+  border-width: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #000; /* or whatever color you want */
+  -webkit-text-fill-color: initial; /* resets transparent fill from parent */
+  -webkit-background-clip: initial; /* prevent inheriting clipped text */
+  background-clip: initial;
 }

@@ -8,7 +8,7 @@ import Chess from './pages/Chess';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import PageLayout from './components/PageLayout';
 import './App.css';
-import NET from 'vanta/dist/vanta.net.min'; // ✅ no src
+import RINGS from 'vanta/dist/vanta.rings.min'; // ✅ no src
 import * as THREE from 'three';
   // App component
   // This component sets up the main structure of the application with routing
@@ -21,23 +21,19 @@ import * as THREE from 'three';
   function App() {
     const vantaRef = useRef(null);
     const vantaEffect = useRef(null);
-    console.log(NET);
   
     useEffect(() => {
       if (!vantaEffect.current) {
-        vantaEffect.current = NET({
+        vantaEffect.current = RINGS({
           el: vantaRef.current,
           THREE: THREE,
           minHeight: 100.0,
           minWidth: 100.0,
           scale: 1.0,
           scaleMobile: 1.0,
-          color: 0x2aed43,
-          backgroundColor: 0x171343,
-          showDots: true,
-          points: 4,        // default: 12 — fewer points = wider spacing
-          maxDistance: 30,  // default: 20 — smaller = tighter net, bigger = sparser
-          spacing: 20,       // default: 20 — bigger spacing = looser net
+          color: 0x8eff,
+          backgroundColor: 0x000000,
+          backgroundAlpha: 1,
         });
       }
   
@@ -50,7 +46,9 @@ import * as THREE from 'three';
     }, []);
   
     return (
-      <div className="app-root" ref={vantaRef}>
+      <>
+      {vantaEffect  && (
+      < div className="app-root" ref={vantaRef}>
       <Router>
         <Routes>
             <Route element={<PageLayout />}>
@@ -63,6 +61,8 @@ import * as THREE from 'three';
         </Routes>
       </Router>
     </div>
+    )}
+    </>
     );
 }
 
